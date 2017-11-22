@@ -1,11 +1,11 @@
 
-import {Message} from "../../models/message/message";
-import {USER_LIST} from "../user/user";
+import {Message} from "../../models/message/message.interface";
+import {PROFILE_LIST} from "../profiles/profiles";
 
-const userList = USER_LIST;
+const profileList = PROFILE_LIST;
 const messageList:Message[]=[];
 
-userList.forEach(user=>{
+profileList.forEach(user=>{
   messageList.push({user:user,date:new Date(),lastMessage:'Hello'})
 });
 

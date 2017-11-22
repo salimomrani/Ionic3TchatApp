@@ -1,19 +1,20 @@
-import {User} from "../../models/user/user";
+import {Profile} from "../../models/profile/profile.interface";
 
-const userList:User[] = [
+const profileList:Profile[] = [
   {
     firstName : 'Salim',
     lastName:'Omrani',
     email : 'omrani_salim@outlook.fr',
     avatar : 'assets/imgs/avatar.png',
+    dateOfBirth : new Date
   },
   {
     firstName : 'ofrlo',
     lastName:'Omrani',
     email : 'sdsdrf@outlook.fr',
     avatar : 'assets/imgs/avatar.png',
+    dateOfBirth : new Date
   }
 ];
 
-
-export const USER_LIST = userList;
+export const PROFILE_LIST = profileList;
