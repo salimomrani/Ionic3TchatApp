@@ -1,0 +1,19 @@
+<!-- Generated template for the LoginformComponent component -->
+<ion-card>
+  <ion-card-content>
+    <ion-item>
+      <ion-label floating>Email Address</ion-label>
+      <ion-input [(ngModel)]="login.email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input [(ngModel)]="login.password" type="password"></ion-input>
+    </ion-item>
+  </ion-card-content >
+  <ion-row class="login-form__buttons">
+    <div>
+      <button ion-button (click)="navigateToRegisterPage()" color="secondary">Register</button>
+    </div>
+    <button ion-button (click)="loginForm()">Login</button>
+  </ion-row>
+</ion-card>

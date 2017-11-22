@@ -1,0 +1,21 @@
+<ion-card >
+  <ion-card-content >
+    <ion-item>
+      <ion-label floating>First Name</ion-label>
+      <ion-input type="text" required [(ngModel)]="profile.firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Last Name</ion-label>
+      <ion-input type="text" required [(ngModel)]="profile.lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Date de Naissance</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" required [(ngModel)]="profile.dateOfBirth" ></ion-datetime>
+    </ion-item>
+
+  </ion-card-content>
+</ion-card>
+
+<ion-row class="edit-form__buttons">
+<button  ion-button color="primary"   (click)="saveProfile()">Save</button>
+</ion-row>
