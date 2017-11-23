@@ -31,7 +31,7 @@ export class LoginformComponent {
 
 
   async loginForm() {
-      const  loginResponse = await this.authProvider.signWithEmailAndPassword(this.login)
+      const  loginResponse = await this.authProvider.signWithEmailAndPassword(this.login);
       this.loginStatus.emit(loginResponse);
   }
 
