@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, ToastController} from 'ionic-angular';
 import {LoginResponse} from "../../models/login/login-response.interface";
 
 /**
@@ -16,12 +16,12 @@ import {LoginResponse} from "../../models/login/login-response.interface";
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public toast: ToastController) {
+  constructor( public toast: ToastController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
-  }
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad RegisterPage');
+  // }
 
   registerEvent(event: LoginResponse) {
       if (!event.error){
