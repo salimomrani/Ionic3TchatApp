@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase,AngularFireObject} from "angularfire2/database";
+import {AngularFireDatabase, AngularFireList, AngularFireObject} from "angularfire2/database";
 import {User} from "firebase";
 import {Profile} from "../../models/profile/profile.interface";
 import "rxjs/add/operator/take";
 import {Observable} from "rxjs";
+import {AngularFireAuth} from "angularfire2/auth";
+import {FirebaseListObservable} from "angularfire2/database-deprecated";
 /*
   Generated class for the DataProvider provider.
 
@@ -15,6 +17,7 @@ import {Observable} from "rxjs";
 export class DataProvider {
 
   profileObject : AngularFireObject<Profile>;
+  profileList : AngularFireList<Profile>;
 
   constructor(public http: HttpClient,private database:AngularFireDatabase) {
 
@@ -35,6 +38,17 @@ export class DataProvider {
       console.error(e);
       return false
     }
+  }
+
+
+  searchUser(firstName:string){
+    console.log(firstName);
+     this.profileList =  this.database.list('/profiles',
+      ref =>
+        ref.orderByChild('firstName').equalTo(firstName)
+    );
+
+    return this.profileList.valueChanges()
   }
 
 }

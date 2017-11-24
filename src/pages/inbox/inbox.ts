@@ -16,12 +16,10 @@ import {MESSAGE_LIST} from "../../mocks/message/message";
 })
 export class InboxPage {
 
-  messageList = MESSAGE_LIST;
-
-
   constructor(private navCtrl: NavController, private navParams: NavParams) {
   }
 
-
-
+  navigateToSearchUserPage() {
+    this.navCtrl.push('SearchUserPage');
+  }
 }
