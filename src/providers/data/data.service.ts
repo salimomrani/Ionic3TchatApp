@@ -4,9 +4,7 @@ import {AngularFireDatabase, AngularFireList, AngularFireObject} from "angularfi
 import {User} from "firebase";
 import {Profile} from "../../models/profile/profile.interface";
 import "rxjs/add/operator/take";
-import {Observable} from "rxjs";
-import {AngularFireAuth} from "angularfire2/auth";
-import {FirebaseListObservable} from "angularfire2/database-deprecated";
+
 /*
   Generated class for the DataProvider provider.
 
@@ -42,13 +40,11 @@ export class DataProvider {
 
 
   searchUser(firstName:string){
-    console.log(firstName);
      this.profileList =  this.database.list('/profiles',
       ref =>
         ref.orderByChild('firstName').equalTo(firstName)
     );
-
-    return this.profileList.valueChanges()
+    return this.profileList
   }
 
 }
